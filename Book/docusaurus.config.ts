@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Physical AI: Humanoid & Robotics Systems',
+  tagline: 'Comprehensive education in Physical AI and Robotics',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -22,8 +22,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'your-github-username', // Usually your GitHub org/user name.
+  projectName: 'physical-ai-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -44,7 +44,9 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/your-username/physical-ai-book',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +57,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/your-username/physical-ai-book',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -68,6 +70,17 @@ const config: Config = {
     ],
   ],
 
+  // Removing Algolia search for now to avoid validation errors
+  // themes: [
+  //   // For search functionality
+  //   [
+  //     '@docusaurus/theme-search-algolia',
+  //     {
+  //       // Configuration will go here but for now we'll keep it minimal to prevent validation errors
+  //     },
+  //   ],
+  // ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -75,9 +88,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Physical AI Book',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Physical AI Book Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -85,11 +98,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Book Contents',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/your-username/physical-ai-book',
           label: 'GitHub',
           position: 'right',
         },
@@ -99,11 +112,23 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Book Sections',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Part 0: Orientation',
+              to: '/docs/part-0-orientation/chapter-0.1-what-is-physical-ai',
+            },
+            {
+              label: 'Part 1: Robotics Fundamentals',
+              to: '/docs/part-1-robotics-fundamentals/chapter-1.1-anatomy-of-a-robot',
+            },
+            {
+              label: 'Part 2: Physical AI Core',
+              to: '/docs/part-2-physical-ai-core/chapter-2.1-perception-in-physical-ai',
+            },
+            {
+              label: 'Part 5: Simulation Practice',
+              to: '/docs/part-5-simulation-practice/chapter-5.1-simulation-first-approach',
             },
           ],
         },
@@ -111,34 +136,34 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'GitHub',
+              href: 'https://github.com/your-username/physical-ai-book',
             },
             {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discordapp.com/invite/physical-ai',
             },
             {
               label: 'X',
-              href: 'https://x.com/docusaurus',
+              href: 'https://x.com/physicalAI',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Resources',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Simulation Tools',
+              to: '/docs/part-5-simulation-practice/chapter-5.1-simulation-first-approach',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/your-username/physical-ai-book',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI Education Project. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
