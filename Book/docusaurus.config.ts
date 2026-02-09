@@ -15,17 +15,23 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://mromankhan.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/AI-Book/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-github-username', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-book', // Usually your repo name.
+  organizationName: 'mromankhan', // Usually your GitHub org/user name.
+  projectName: 'AI-Book', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
+
+  // Custom fields accessible via useDocusaurusContext
+  customFields: {
+    chatbotApiUrl: process.env.CHATBOT_API_URL || 'http://localhost:8000',
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -44,7 +50,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-username/physical-ai-book',
+            'https://github.com/mromankhan/AI-Book',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
@@ -57,7 +63,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-username/physical-ai-book',
+            'https://github.com/mromankhan/AI-Book',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -102,8 +108,12 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/your-username/physical-ai-book',
+          href: 'https://github.com/mromankhan/AI-Book',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'custom-userMenu',
           position: 'right',
         },
       ],
@@ -137,7 +147,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/your-username/physical-ai-book',
+              href: 'https://github.com/mromankhan/AI-Book',
             },
             {
               label: 'Discord',
@@ -158,7 +168,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/your-username/physical-ai-book',
+              href: 'https://github.com/mromankhan/AI-Book',
             },
           ],
         },

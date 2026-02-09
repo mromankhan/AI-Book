@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* Urdu / Noto Nastaliq font for translation support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
