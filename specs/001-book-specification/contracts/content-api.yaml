@@ -1,0 +1,207 @@
+# API Contracts: Physical AI: Humanoid & Robotics Systems Book
+
+## Content Navigation API
+
+### Retrieve Book Structure
+```
+GET /api/book/structure
+```
+
+**Response**:
+```json
+{
+  "bookId": "physical-ai-humanoid-robotics",
+  "title": "Physical AI: Humanoid & Robotics Systems",
+  "parts": [
+    {
+      "partId": "part-0-orientation",
+      "partNumber": 0,
+      "title": "Orientation & Setup",
+      "chapters": [
+        {
+          "chapterId": "chapter-0.1-what-is-physical-ai",
+          "chapterNumber": "0.1",
+          "title": "What is Physical AI?",
+          "path": "/docs/part-0-orientation/chapter-0.1-what-is-physical-ai.md",
+          "estimatedReadingTime": 10,
+          "prerequisites": []
+        },
+        {
+          "chapterId": "chapter-0.2-learning-path-tooling",
+          "chapterNumber": "0.2", 
+          "title": "Learning Path & Tooling",
+          "path": "/docs/part-0-orientation/chapter-0.2-learning-path-tooling.md",
+          "estimatedReadingTime": 15,
+          "prerequisites": ["chapter-0.1-what-is-physical-ai"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Retrieve Chapter Content
+```
+GET /api/chapter/{chapterId}
+```
+
+**Path Parameters**:
+- `chapterId`: Unique identifier for the chapter (e.g., "chapter-2.1-perception-in-physical-ai")
+
+**Response**:
+```json
+{
+  "chapterId": "chapter-2.1-perception-in-physical-ai",
+  "title": "Perception in Physical AI",
+  "partId": "part-2-physical-ai-core",
+  "content": {
+    "overview": {
+      "learningObjectives": ["Understand vision pipelines", "Learn sensor fusion basics"],
+      "importance": "Perception is crucial for robots to understand their environment"
+    },
+    "coreConcepts": {
+      "concepts": ["Vision pipelines", "Sensor fusion", "State estimation"],
+      "diagrams": [
+        {
+          "id": "vision-pipeline-diagram",
+          "description": "Diagram showing vision pipeline components"
+        }
+      ],
+      "explanations": "Physical AI perception combines multiple sensors..."
+    },
+    "handsOnSection": {
+      "instructions": [
+        "Step 1: Set up simulation environment",
+        "Step 2: Implement basic computer vision function",
+        "Step 3: Test with sample data"
+      ],
+      "codeExamples": [
+        {
+          "language": "python",
+          "code": "# Example code for image processing\nimport cv2\n..."
+        }
+      ],
+      "expectedOutput": "Processed image showing detected objects",
+      "toolsRequired": ["Python 3.8+", "OpenCV", "Simulation environment"]
+    },
+    "realWorldMapping": {
+      "realApplications": ["Self-driving cars", "Warehouse robots", "Humanoid navigation"],
+      "limitations": ["Lighting conditions", "Occlusions", "Processing power"],
+      "bridgingContent": "Real robots face additional challenges like noise..."
+    },
+    "exercises": {
+      "beginnerTasks": [
+        {
+          "id": "exercise-2.1-a",
+          "title": "Basic Image Processing",
+          "description": "Process a sample image using OpenCV"
+        }
+      ],
+      "stretchChallenges": [
+        {
+          "id": "challenge-2.1-a", 
+          "title": "Advanced Sensor Fusion",
+          "description": "Combine data from multiple simulated sensors"
+        }
+      ]
+    },
+    "summary": {
+      "keyTakeaways": [
+        "Perception combines multiple sensor inputs",
+        "Real-world applications have additional constraints"
+      ],
+      "nextSteps": ["Control Systems in Chapter 2.2"]
+    }
+  },
+  "estimatedReadingTime": 25,
+  "difficulty": "Intermediate",
+  "prerequisites": [
+    "chapter-1.2-sensors-perception",
+    "chapter-1.3-actuators-motion"
+  ],
+  "relatedChapters": [
+    "chapter-2.2-control-systems",
+    "chapter-3.1-machine-learning-for-robotics"
+  ]
+}
+```
+
+## User Progress API
+
+### Save User Progress
+```
+POST /api/user/progress
+```
+
+**Request Body**:
+```json
+{
+  "userId": "user-12345",
+  "chapterId": "chapter-2.1-perception-in-physical-ai",
+  "completionPercentage": 75,
+  "completedSections": [
+    "overview",
+    "coreConcepts",
+    "handsOnSection"
+  ],
+  "lastAccessed": "2025-12-14T12:30:00Z",
+  "notes": ["Key concept: Sensor fusion combines multiple inputs", "Need to review PID controllers"]
+}
+```
+
+### Retrieve User Progress
+```
+GET /api/user/progress/{userId}
+```
+
+**Response**:
+```json
+{
+  "userId": "user-12345",
+  "bookProgress": {
+    "completedParts": ["part-0-orientation", "part-1-robotics-fundamentals"],
+    "currentPart": "part-2-physical-ai-core",
+    "currentChapter": "chapter-2.1-perception-in-physical-ai",
+    "overallCompletion": 35
+  },
+  "chapterProgress": [
+    {
+      "chapterId": "chapter-2.1-perception-in-physical-ai",
+      "completionPercentage": 75,
+      "lastAccessed": "2025-12-14T12:30:00Z",
+      "notes": ["Key concept: Sensor fusion combines multiple inputs"]
+    }
+  ]
+}
+```
+
+## Search API
+
+### Search Content
+```
+GET /api/search
+```
+
+**Query Parameters**:
+- `q`: Search query string
+- `limit`: Number of results to return (default: 10)
+- `partId`: Optional filter by part
+
+**Response**:
+```json
+{
+  "query": "PID controller",
+  "results": [
+    {
+      "id": "chapter-2.2-control-systems",
+      "title": "Control Systems",
+      "part": "Part 2: Physical AI Core Concepts",
+      "path": "/docs/part-2-physical-ai-core/chapter-2.2-control-systems.md",
+      "relevance": 0.95,
+      "snippet": "PID controllers are fundamental in robotics for maintaining desired positions..."
+    }
+  ],
+  "totalResults": 1,
+  "tookMs": 25
+}
+```

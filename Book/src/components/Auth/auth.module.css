@@ -1,0 +1,198 @@
+/* Auth Modal Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: var(--ifm-background-color);
+  border-radius: 12px;
+  padding: 32px;
+  width: 420px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.input {
+  padding: 8px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.select {
+  padding: 8px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.submitButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.switchText {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 12px;
+}
+
+.switchLink {
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.error {
+  color: var(--ifm-color-danger);
+  font-size: 13px;
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* User Menu */
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--ifm-font-color-base);
+}
+
+.userButton:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.authButton {
+  padding: 6px 14px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.authButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 100;
+  padding: 4px 0;
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--ifm-font-color-base);
+}
+
+.dropdownItem:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  margin-top: 8px;
+}
