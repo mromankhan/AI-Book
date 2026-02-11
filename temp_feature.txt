@@ -1,0 +1,1 @@
+Create a detailed specification for a documentation-based book titled: "Physical AI: Humanoid & Robotics Systems"
