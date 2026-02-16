@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 001-book-specification
   workflow_dispatch:
 
 permissions:
