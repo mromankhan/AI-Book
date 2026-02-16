@@ -1,33 +1,196 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global CSS for Physical AI Book
+ * Design system: Indigo/blue palette, Inter font, glassmorphism navbar
  */
 
-/* Urdu / Noto Nastaliq font for translation support */
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
 
-/* You can override the default Infima variables here. */
+/* ===== LIGHT THEME ===== */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary palette: Indigo for AI/tech identity */
+  --ifm-color-primary: #4F46E5;
+  --ifm-color-primary-dark: #4338CA;
+  --ifm-color-primary-darker: #3730A3;
+  --ifm-color-primary-darkest: #312E81;
+  --ifm-color-primary-light: #6366F1;
+  --ifm-color-primary-lighter: #818CF8;
+  --ifm-color-primary-lightest: #A5B4FC;
+
+  /* Typography */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ifm-heading-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ifm-font-weight-bold: 700;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-heading-font-weight: 700;
+
+  /* Custom design tokens */
+  --custom-gradient-primary: linear-gradient(135deg, #4F46E5, #7C3AED);
+  --custom-gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #312E81 100%);
+  --custom-gradient-accent: linear-gradient(135deg, #6366F1, #8B5CF6);
+  --custom-shadow-sm: 0 1px 2px rgba(79, 70, 229, 0.05);
+  --custom-shadow-md: 0 4px 14px rgba(79, 70, 229, 0.1);
+  --custom-shadow-lg: 0 10px 40px rgba(79, 70, 229, 0.15);
+  --custom-shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+  --custom-border-radius: 12px;
+  --custom-card-bg: #ffffff;
+  --custom-card-border: rgba(79, 70, 229, 0.1);
+  --custom-text-muted: #64748B;
+
+  /* Infima overrides */
+  --ifm-border-radius: 8px;
+  --docusaurus-highlighted-code-line-bg: rgba(79, 70, 229, 0.1);
+  --ifm-navbar-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* ===== DARK THEME ===== */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #818CF8;
+  --ifm-color-primary-dark: #6366F1;
+  --ifm-color-primary-darker: #4F46E5;
+  --ifm-color-primary-darkest: #4338CA;
+  --ifm-color-primary-light: #A5B4FC;
+  --ifm-color-primary-lighter: #C7D2FE;
+  --ifm-color-primary-lightest: #E0E7FF;
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.2);
+
+  --custom-gradient-primary: linear-gradient(135deg, #818CF8, #A78BFA);
+  --custom-gradient-hero: linear-gradient(135deg, #020617 0%, #0F172A 50%, #1E1B4B 100%);
+  --custom-gradient-accent: linear-gradient(135deg, #818CF8, #A78BFA);
+  --custom-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --custom-shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --custom-shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --custom-shadow-glow: 0 0 20px rgba(129, 140, 248, 0.3);
+  --custom-card-bg: #1E293B;
+  --custom-card-border: rgba(129, 140, 248, 0.15);
+  --custom-text-muted: #94A3B8;
+}
+
+/* ===== GLOBAL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR GLASSMORPHISM ===== */
+.navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(79, 70, 229, 0.08);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border-bottom: 1px solid rgba(129, 140, 248, 0.1);
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+.navbar__link--active {
+  font-weight: 600;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-primary-lightest);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary-light);
+}
+
+/* ===== DOC HEADINGS ===== */
+.markdown h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: var(--custom-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.markdown h2 {
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--ifm-color-primary-lightest);
+}
+
+.markdown h3 {
+  color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .markdown h3 {
+  color: var(--ifm-color-primary-light);
+}
+
+/* ===== ADMONITIONS & CODE BLOCKS ===== */
+.theme-admonition {
+  border-radius: var(--custom-border-radius);
+  box-shadow: var(--custom-shadow-sm);
+}
+
+.theme-code-block {
+  border-radius: var(--custom-border-radius) !important;
+  box-shadow: var(--custom-shadow-md);
+  border: 1px solid var(--custom-card-border);
+}
+
+/* ===== FOOTER ===== */
+.footer--dark {
+  background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary-light);
+  text-decoration: none;
+}
+
+/* ===== GLOBAL KEYFRAME ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(99, 102, 241, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }

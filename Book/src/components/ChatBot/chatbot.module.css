@@ -3,44 +3,47 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: var(--ifm-color-primary);
+  background: var(--custom-gradient-accent);
   color: white;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 26px;
   z-index: 1000;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pulse 3s infinite;
 }
 
 .chatButton:hover {
   transform: scale(1.1);
-  background: var(--ifm-color-primary-dark);
+  box-shadow: 0 6px 28px rgba(99, 102, 241, 0.5);
+  animation: none;
 }
 
 /* Chat panel */
 .chatPanel {
   position: fixed;
-  bottom: 90px;
+  bottom: 96px;
   right: 24px;
   width: 400px;
   max-width: calc(100vw - 48px);
   height: 520px;
   max-height: calc(100vh - 120px);
   background: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--custom-card-border);
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   z-index: 1000;
   overflow: hidden;
+  animation: slideUp 0.3s ease-out;
 }
 
 /* Header */
@@ -48,8 +51,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  background: var(--ifm-color-primary);
+  padding: 14px 16px;
+  background: var(--custom-gradient-accent);
   color: white;
   flex-shrink: 0;
 }
@@ -69,6 +72,12 @@
   padding: 4px;
   display: flex;
   align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.closeButton:hover {
+  opacity: 1;
 }
 
 /* Messages area */
@@ -93,9 +102,10 @@
 
 .userMessage {
   align-self: flex-end;
-  background: var(--ifm-color-primary);
+  background: var(--custom-gradient-accent);
   color: white;
   border-bottom-right-radius: 4px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
 }
 
 .assistantMessage {
@@ -103,6 +113,7 @@
   background: var(--ifm-color-emphasis-100);
   color: var(--ifm-font-color-base);
   border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .assistantMessage p {
@@ -192,26 +203,29 @@
   font-family: inherit;
   min-height: 36px;
   max-height: 80px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .chatInput:focus {
   border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 .sendButton {
   padding: 8px 14px;
-  background: var(--ifm-color-primary);
+  background: var(--custom-gradient-accent);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
   flex-shrink: 0;
-  transition: background 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .sendButton:hover {
-  background: var(--ifm-color-primary-dark);
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
 }
 
 .sendButton:disabled {
@@ -222,20 +236,20 @@
 /* Selection popup */
 .selectionPopup {
   position: fixed;
-  background: var(--ifm-color-primary);
+  background: var(--custom-gradient-accent);
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
   cursor: pointer;
   z-index: 1001;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.4);
   user-select: none;
-  transition: opacity 0.15s;
+  transition: opacity 0.15s, transform 0.15s;
 }
 
 .selectionPopup:hover {
-  background: var(--ifm-color-primary-dark);
+  transform: translateY(-1px);
 }
 
 /* Welcome message */
