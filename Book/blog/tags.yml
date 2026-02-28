@@ -1,19 +1,29 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+robotics:
+  label: Robotics
+  permalink: /robotics
+  description: Posts about robotics fundamentals and applications
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+ai:
+  label: Artificial Intelligence
+  permalink: /ai
+  description: Posts about AI and machine learning in robotics
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+humanoid:
+  label: Humanoid Robots
+  permalink: /humanoid
+  description: Posts about humanoid robotics and bipedal locomotion
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+simulation:
+  label: Simulation
+  permalink: /simulation
+  description: Posts about robotics simulation and digital twins
+
+announcement:
+  label: Announcement
+  permalink: /announcement
+  description: Project announcements and updates
+
+learning:
+  label: Learning
+  permalink: /learning
+  description: Educational content and learning resources

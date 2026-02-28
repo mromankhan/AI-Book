@@ -3,11 +3,12 @@
   gap: 10px;
   margin-bottom: 20px;
   padding: 12px 16px;
-  background: var(--ifm-color-emphasis-100);
-  border-radius: 8px;
-  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--custom-card-bg);
+  border-radius: var(--custom-border-radius);
+  border: 1px solid var(--custom-card-border);
   flex-wrap: wrap;
   align-items: center;
+  box-shadow: var(--custom-shadow-sm);
 }
 
 .actionButton {
@@ -25,9 +26,9 @@
 }
 
 .actionButton:hover {
-  background: var(--ifm-color-primary);
+  background: var(--custom-gradient-accent);
   color: white;
-  border-color: var(--ifm-color-primary);
+  border-color: transparent;
 }
 
 .actionButton:disabled {
@@ -36,9 +37,9 @@
 }
 
 .activeButton {
-  background: var(--ifm-color-primary);
+  background: var(--custom-gradient-accent);
   color: white;
-  border-color: var(--ifm-color-primary);
+  border-color: transparent;
 }
 
 .urduButton {
