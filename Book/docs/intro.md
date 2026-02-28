@@ -1,47 +1,43 @@
 ---
 sidebar_position: 1
+slug: /intro
 ---
 
-# Tutorial Intro
+# Welcome to Physical AI
 
-Let's discover **Docusaurus in less than 5 minutes**.
+**Physical AI: Humanoid & Robotics Systems** is a comprehensive, interactive textbook designed to take you from foundational robotics concepts to advanced humanoid systems and intelligent control.
 
-## Getting Started
+## How to Use This Book
 
-Get started by **creating a new site**.
+### Reading Chapters
+Navigate through the book using the sidebar on the left. Chapters are organized into 7 parts, progressing from fundamentals to advanced topics. Each chapter includes:
+- **Learning Objectives** at the start
+- **Key Concepts** with clear explanations
+- **Practical Examples** and code snippets
+- **Chapter Summary** and review questions
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### AI Learning Assistant
+Click the **chat button** in the bottom-right corner to ask questions about any topic in the book. Our AI assistant understands every chapter and provides answers with source citations.
 
-### What you'll need
+You can also **select any text** in a chapter and click "Ask AI about this" for instant explanations.
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### Personalize Your Experience
+Sign in to unlock personalized features:
+- **Personalize** -- Get chapter content adapted to your programming level and background
+- **Translate** -- Read any chapter in Urdu with proper RTL formatting
 
-## Generate a new site
+## Book Structure
 
-Generate a new Docusaurus site using the **classic template**.
+| Part | Focus | Chapters |
+|------|-------|----------|
+| **Part 0** | Orientation & Setup | What is Physical AI, Learning Path |
+| **Part 1** | Robotics Fundamentals | Anatomy, Sensors, Actuators |
+| **Part 2** | Physical AI Core | Perception, Control, Decision-Making |
+| **Part 3** | Learning & Intelligence | Machine Learning, Reinforcement Learning |
+| **Part 4** | Humanoid Robotics | Humanoid Design, Locomotion & Balance |
+| **Part 5** | Simulation & Practice | Sim-to-Real, Hands-On Projects |
+| **Part 6** | System Integration | Software-Hardware, Safety & Ethics |
 
-The classic template will automatically be added to your project after you run the command:
+## Get Started
 
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Ready to begin? Start with [Chapter 0.1: What is Physical AI?](/docs/part-0-orientation/chapter-0.1-what-is-physical-ai) to understand the landscape, or jump to any part that interests you using the sidebar.
