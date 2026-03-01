@@ -11,6 +11,7 @@ from app.config import settings
 client = QdrantClient(
     url=settings.qdrant_url,
     api_key=settings.qdrant_api_key,
+    timeout=10,
 )
 
 VECTOR_SIZE = 1536  # text-embedding-3-small dimension
@@ -57,23 +58,25 @@ def search_similar(query_vector: List[float], limit: int = 5, chapter_filter: Op
             must=[FieldCondition(key="chapter", match=MatchValue(value=chapter_filter))]
         )
 
-    results = client.query_points(
-        collection_name=settings.qdrant_collection_name,
-        query=query_vector,
-        limit=limit,
-        query_filter=search_filter,
-        with_payload=True,
-    )
-
-    return [
-        {
-            "content": point.payload["content"],
-            "chapter": point.payload["chapter"],
-            "section": point.payload["section"],
-            "score": point.score,
-        }
-        for point in results.points
-    ]
+    try:
+        results = client.query_points(
+            collection_name=settings.qdrant_collection_name,
+            query=query_vector,
+            limit=limit,
+            query_filter=search_filter,
+            with_payload=True,
+        )
+        return [
+            {
+                "content": point.payload["content"],
+                "chapter": point.payload["chapter"],
+                "section": point.payload["section"],
+                "score": point.score,
+            }
+            for point in results.points
+        ]
+    except Exception:
+        return []
 
 
 def delete_collection():
